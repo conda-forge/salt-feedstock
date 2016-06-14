@@ -26,7 +26,6 @@ requirements:
     - msgpack-python
     - openssl 1.0.*
     - pycrypto
-    - m2crypto
     - pyyaml
     - pyzmq >=2.2.0
     - markupsafe
