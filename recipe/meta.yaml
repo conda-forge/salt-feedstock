@@ -41,7 +41,7 @@ test:
 
 about:
   home: http://saltstack.com
-  license: Apache License 2.0
+  license: Apache 2.0
   summary: Software to automate the management and configuration of any infrastructure or application at scale
 
 extra:
