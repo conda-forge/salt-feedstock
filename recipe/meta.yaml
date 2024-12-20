@@ -6,18 +6,18 @@ package:
 
 source:
   fn: salt-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/s/salt/salt-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/s/salt/salt-{{ version }}.tar.gz
   sha256: e316dd103b7faeaa97820197e4d0d7d358519f0ca2a6dcb1d9b718eea801ed30
 
   patches:
     - setup.py.patch  # [win]
 
 build:
-  number: 1003
+  number: 1004
   skip: True  # [win32 or py3k]
 
 requirements:
-  build:
+  host:
     - python
     - setuptools
   run:
