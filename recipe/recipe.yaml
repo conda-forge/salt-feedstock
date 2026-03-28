@@ -11,15 +11,14 @@ source:
 
 build:
   number: 0
-  script: ${{ PYTHON }} -m pip install . -vv --no-build-isolation
 
 requirements:
   host:
-    - python >=3.10
+    - python
     - pip
     - setuptools
   run:
-    - python >=3.10
+    - python
     - aiohttp >=3.13.3
     - certifi >=2024.7.4
     - cffi >=2.0.0
