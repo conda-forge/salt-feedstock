@@ -11,6 +11,7 @@ source:
 
 build:
   number: 0
+  noarch: python
 
 requirements:
   host:
@@ -18,7 +19,7 @@ requirements:
     - pip
     - setuptools
   run:
-    - python
+    - python 
     - aiohttp >=3.13.3
     - certifi >=2024.7.4
     - cffi >=2.0.0
@@ -48,9 +49,7 @@ requirements:
     - urllib3 >=2.6.3
     - virtualenv
     - zipp >=3.19.1
-    - if: linux
-      then:
-        - rpm-vercmp
+    - rpm-vercmp
 
 tests:
   - python:
