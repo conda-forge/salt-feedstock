@@ -1,4 +1,4 @@
-{% set version = "2016.3.0" %}
+{% set version = "3007.2" %}
 
 package:
   name: salt
@@ -6,15 +6,15 @@ package:
 
 source:
   fn: salt-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/s/salt/salt-{{ version }}.tar.gz
-  sha256: e316dd103b7faeaa97820197e4d0d7d358519f0ca2a6dcb1d9b718eea801ed30
+  url: https://pypi.org/packages/source/s/salt/salt-{{ version }}.tar.gz
+  sha256: 76dfd8e43db646fb357ba52b45394008182549b6a5584688ed452c48c9d112ec
 
   patches:
     - setup.py.patch  # [win]
 
 build:
-  number: 1003
-  skip: True  # [win32 or py3k]
+  number: 0
+  skip: true  # [win32 or py3k]
 
 requirements:
   build:
