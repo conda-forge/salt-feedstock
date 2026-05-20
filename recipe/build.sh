@@ -1,23 +1,20 @@
 #!/bin/bash
+set -euo pipefail
 
-$PYTHON setup.py install
+$PYTHON -m pip install . -vv --no-build-isolation
 
-# Create directory structure for salt
-# These are ENV safe, because we created a custom
-# _syspaths.py file
+# Override syspaths to point to the conda prefix
+cp $RECIPE_DIR/_syspaths.py $SP_DIR/salt/_syspaths.py
 
-# this file re-maps the default paths for configs
-cp $RECIPE_DIR/_syspaths.py $SP_DIR/salt
-
-DIRECTORIES="etc/salt
-var/cache/salt
-var/run/salt
-srv/salt
-srv/pillar
-var/log/salt
-var/run
-"
-for path in $DIRECTORIES
+# Create directory structure for salt within the conda prefix
+for path in \
+    etc/salt \
+    var/cache/salt \
+    var/run/salt \
+    srv/salt \
+    srv/pillar \
+    var/log/salt \
+    var/run
 do
     mkdir -p $PREFIX/$path
     touch $PREFIX/$path/.condakeep

@@ -1,4 +1,4 @@
-%PYTHON% setup.py install
+%PYTHON% -m pip install . -vv --no-build-isolation
 if errorlevel 1 exit 1
 
 for %%D in (
